@@ -407,12 +407,12 @@ fun generateRadiusList(pageCount: Int, currentPage: Int): List<Dp> {
     val radiusForDistance = mapOf(
         0 to 8.dp,
         1 to 8.dp,
-        2 to 5.dp
+        2 to 6.dp
     )
 
     return List(pageCount) { index ->
         val distance = kotlin.math.abs(index - currentPage)
-        radiusForDistance[distance] ?: 2.dp
+        radiusForDistance[distance] ?: 5.dp
     }
 }
 
