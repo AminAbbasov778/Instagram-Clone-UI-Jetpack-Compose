@@ -10,5 +10,6 @@
     <color name="blue">#1FA1FF</color>
     <color name="dot_blue">#32B5FF</color>
     <color name="dot_grey">#C4C4C4</color>
+    <color name="text_grey">#DDDDDD</color>
     <color name="red">#FE0135</color>
 </resources>

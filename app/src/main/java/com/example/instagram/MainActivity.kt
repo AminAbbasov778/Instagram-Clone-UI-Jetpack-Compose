@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -154,7 +155,7 @@ fun StoriesSection(stories: List<StoryModel>) {
                     }
                 }
                 Spacer(modifier = Modifier.height(4.dp))
-                Text(text = "Ruffles", fontSize = 12.sp, modifier = Modifier.padding(start = 20.dp))
+                Text(text = "Ruffles", fontSize = 12.sp, modifier = Modifier.padding(start = 20.dp), color = colorResource(R.color.text_grey))
             }
         }
         items(stories) { story ->
@@ -329,7 +330,7 @@ fun ImageSlider() {
                     Text(
                         text = "CTA copy here",
                         color = colorResource(R.color.white),
-                        modifier = Modifier.align(Alignment.CenterStart).padding(start = 20.dp)
+                        modifier = Modifier.align(Alignment.CenterStart).padding(start = 20.dp), fontWeight = FontWeight.ExtraBold
                     )
                     Icon(
                         imageVector = Icons.Filled.ArrowForwardIos,
@@ -359,8 +360,11 @@ fun ImageSlider() {
                 modifier = Modifier.weight(33f).size(30.dp).padding(start = 105.dp).align(Alignment.CenterVertically)
             )
         }
-        Spacer(modifier = Modifier.height(5.dp))
-        Row(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
+        
+        Spacer(modifier = Modifier.width(5.dp))
+
+        Text(text = "100 likes", fontWeight = FontWeight.ExtraBold, fontSize = 18.sp,modifier = Modifier.align(Alignment.Start).padding(start = 20.dp))
+        Row(modifier = Modifier.fillMaxWidth().padding( start = 20.dp)) {
             Text(text = "Username", fontWeight = FontWeight.ExtraBold, fontSize = 18.sp)
             Spacer(modifier = Modifier.width(10.dp))
             Text(
