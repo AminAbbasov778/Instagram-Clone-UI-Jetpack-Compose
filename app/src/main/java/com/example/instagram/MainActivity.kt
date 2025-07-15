@@ -30,6 +30,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.instagram.ui.theme.InstagramTheme
@@ -375,21 +376,19 @@ fun ImageSlider() {
 
 @Composable
 fun CustomPagerIndicator(pageCount: Int, currentPage: Int, modifier: Modifier = Modifier) {
+    val radiusList = remember(pageCount, currentPage) {
+        generateRadiusList(pageCount, currentPage)
+    }
+
     Row(
         modifier = modifier,
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        repeat(pageCount) { index ->
-            val radius = when (index) {
-                pageCount - 2 -> 6.dp
-                pageCount - 1 -> 4.dp
-                else -> 8.dp
-            }
-
+        radiusList.forEachIndexed { index, radius ->
             Box(
                 modifier = Modifier
-                    .padding(horizontal = 4.dp)
+                    .padding(horizontal = 3.dp)
                     .size(radius)
                     .clip(CircleShape)
                     .background(
@@ -402,6 +401,21 @@ fun CustomPagerIndicator(pageCount: Int, currentPage: Int, modifier: Modifier = 
         }
     }
 }
+
+
+fun generateRadiusList(pageCount: Int, currentPage: Int): List<Dp> {
+    val radiusForDistance = mapOf(
+        0 to 8.dp,
+        1 to 8.dp,
+        2 to 5.dp
+    )
+
+    return List(pageCount) { index ->
+        val distance = kotlin.math.abs(index - currentPage)
+        radiusForDistance[distance] ?: 2.dp
+    }
+}
+
 
 
 @Preview(showBackground = true)
