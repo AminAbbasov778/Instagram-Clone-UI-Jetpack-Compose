@@ -361,7 +361,7 @@ fun ImageSlider() {
             )
         }
         
-        Spacer(modifier = Modifier.width(5.dp))
+        Spacer(modifier = Modifier.width(8.dp))
 
         Text(text = "100 likes", fontWeight = FontWeight.ExtraBold, fontSize = 18.sp,modifier = Modifier.align(Alignment.Start).padding(start = 20.dp))
         Row(modifier = Modifier.fillMaxWidth().padding( start = 20.dp)) {
