@@ -355,7 +355,7 @@ fun ImageSlider() {
             Icon(
                 imageVector = Icons.Outlined.Bookmark,
                 contentDescription = null,
-                modifier = Modifier.weight(33f).size(30.dp).padding(start = 100.dp).align(Alignment.CenterVertically)
+                modifier = Modifier.weight(33f).size(30.dp).padding(start = 105.dp).align(Alignment.CenterVertically)
             )
         }
         Spacer(modifier = Modifier.height(5.dp))
