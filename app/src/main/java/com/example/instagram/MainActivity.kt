@@ -376,16 +376,15 @@ fun ImageSlider() {
 
 @Composable
 fun CustomPagerIndicator(pageCount: Int, currentPage: Int, modifier: Modifier = Modifier) {
-    val radiusList = remember(pageCount, currentPage) {
-        generateRadiusList(pageCount, currentPage)
-    }
+    val visibleDots = getVisibleDots(pageCount, currentPage)
+    val radiusList = generateRadiusListForVisible(visibleDots, currentPage)
 
     Row(
         modifier = modifier,
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        radiusList.forEachIndexed { index, radius ->
+        radiusList.forEach { (index, radius) ->
             Box(
                 modifier = Modifier
                     .padding(horizontal = 3.dp)
@@ -403,18 +402,28 @@ fun CustomPagerIndicator(pageCount: Int, currentPage: Int, modifier: Modifier = 
 }
 
 
-fun generateRadiusList(pageCount: Int, currentPage: Int): List<Dp> {
+
+fun generateRadiusListForVisible(visiblePages: List<Int>, currentPage: Int): List<Pair<Int, Dp>> {
     val radiusForDistance = mapOf(
         0 to 8.dp,
         1 to 8.dp,
         2 to 6.dp
     )
 
-    return List(pageCount) { index ->
-        val distance = kotlin.math.abs(index - currentPage)
-        radiusForDistance[distance] ?: 5.dp
+    return visiblePages.map { index ->
+        val distance = kotlin.math.abs(currentPage - index)
+        index to (radiusForDistance[distance] ?: 5.dp)
     }
 }
+
+fun getVisibleDots(pageCount: Int, currentPage: Int, maxVisible: Int = 9): List<Int> {
+    val half = maxVisible / 2
+    val start = maxOf(0, currentPage - half)
+    val end = minOf(pageCount, start + maxVisible)
+
+    return (start until end).toList()
+}
+
 
 
 
