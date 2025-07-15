@@ -74,7 +74,7 @@ fun HomeScreen() {
             ) {
                 item {
                     StoriesSection(stories)
-                    Divider(modifier = Modifier.padding(vertical = 10.dp))
+                    Box(modifier = Modifier.padding(vertical = 10.dp).fillMaxWidth().height(1.5.dp).background(colorResource(R.color.dot_grey)),)
                 }
                 item {
                     PostItem()
@@ -254,7 +254,7 @@ fun BottomNavigationBar(modifier: Modifier = Modifier) {
 
                     Box(
                         modifier = Modifier
-                            .size(10.dp)
+                            .size(8.dp)
                             .offset(y = 38.dp)
                             .clip(CircleShape)
                             .background(Color.Red)
@@ -305,9 +305,9 @@ fun ImageSlider() {
                 Box(
                     modifier = Modifier
                         .align(Alignment.BottomStart)
-                        .padding(start = 20.dp,bottom = 60.dp)
+                        .padding(start = 18.dp,bottom = 60.dp)
                         
-                        .size(40.dp)
+                        .size(35.dp)
                         .background(Color.Black.copy(alpha = 0.6f), CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
@@ -315,7 +315,7 @@ fun ImageSlider() {
                         painter = painterResource(R.drawable.profile),
                         contentDescription = null,
                         tint = colorResource(R.color.white),
-                        modifier = Modifier.size(23.dp)
+                        modifier = Modifier.size(21.dp)
                     )
                 }
                 Box(
