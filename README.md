@@ -7,11 +7,9 @@ This project does not include backend functionality or real user data—it's int
 
 ## 📸 Screenshots
 
-| Header & Stories | Post Slider | Bottom Navigation | Profile Indicator |
-|------------------|-------------|-------------------|-------------------|
-| <img src="screenshots/header.png" width="200" height="400" /> | <img src="screenshots/slider.png" width="200" height="400" /> | <img src="screenshots/bottomnav.png" width="200" height="400" /> | <img src="screenshots/profilehighlight.png" width="200" height="400" /> |
-
-> *(Make sure to include your actual screenshots in the `/screenshots` folder.)*
+| Home Screen|
+|-----------------|
+| <img src="Screenshot/Screenshot_20250724-184949.png" width="200" height="400" /> |
 
 ---
 
