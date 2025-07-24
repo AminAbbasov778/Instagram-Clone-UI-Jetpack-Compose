@@ -96,3 +96,16 @@ While this is a **UI-only app**, the code still adheres to composable and scalab
 
 ## 🧩 Project Structure
 
+- `MainActivity.kt` – App entry point
+- `HomeScreen()` – Composable home layout
+- `InstagramHeader()` – Top app bar with logo and icons
+- `StoriesSection()` – Horizontal scrollable stories
+- `PostItem()` – Post UI with slider and details
+- `ImageSlider()` – HorizontalPager with CTA & indicators
+- `BottomNavigationBar()` – Bottom navigation with profile status
+- `CustomPagerIndicator()` – Animated dots for slider
+- `StoryModel.kt` – Data class for stories
+- `res/drawable` – All image assets
+- `ui.theme` – Color, typography, theme setup
+
+
